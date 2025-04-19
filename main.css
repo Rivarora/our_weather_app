@@ -1,0 +1,28 @@
+.weather-container {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .weather-info p {
+    transition: transform 0.3s ease;
+  }
+  
+  .weather-info p:hover {
+    transform: scale(1.05);
+  }
+  @media screen and (max-width: 600px) {
+    .weather-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .weather-container {
+      padding: 20px;
+    }
+  }
