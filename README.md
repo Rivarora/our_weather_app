@@ -82,4 +82,4 @@
     <li>GitHub for version control</li>
   </ul>
 
-  <hr style="border: 1px solid #3498db; width: 80%;">
+  <hr style="border: 1px solid #3498db; width: 80%;"> 
