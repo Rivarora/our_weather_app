@@ -1,2 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #87cefa, #f9f9f9);
+  background-image: url('https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 2s ease;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  background-color: #0284c7;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
+}
+
+.hero-button:hover {
+  background-color: #0ea5e9;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   
