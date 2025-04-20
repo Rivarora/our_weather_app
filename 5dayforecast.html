@@ -6,5 +6,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>5-Day Forecast - Weather Vibes</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  </head>
+</head>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to right, #89CFF0, #A6E3E9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .cloud {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 60px 0 #fff, 30px -10px #fff, 90px 10px #fff;
+      opacity: 0.6;
+    }
+
+    .cloud.left {
+      animation: moveCloudsRight 60s linear infinite;
+    }
+
+    .cloud.right {
+      animation: moveCloudsLeft 60s linear infinite;
+    }
+
+    .cloud.left:nth-child(1) {
+      width: 120px;
+      height: 60px;
+      top: 100px;
+      left: -200px;
+      animation-delay: 0s;
+    }
+
+    .cloud.left:nth-child(2) {
+      width: 160px;
+      height: 80px;
+      top: 200px;
+      left: -300px;
+      animation-delay: 20s;
+    }
+
+    .cloud.right:nth-child(3) {
+      width: 120px;
+      height: 60px;
+      top: 150px;
+      right: -200px;
+      animation-delay: 10s;
+    }
+
+    .cloud.right:nth-child(4) {
+      width: 160px;
+      height: 80px;
+      top: 250px;
+      right: -300px;
+      animation-delay: 30s;
+    }
+
+   
+
+    .forecast-container {
+      background-color: #d6f0fa;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f3c88;
+      margin-bottom: 30px;
+    }
+
+    .forecast-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .forecast-card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .forecast-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .date {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .icon {
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    .temp {
+      color: #1f3c88;
+      font-weight: bold;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      align-self: center;
+    }
+
+    .back-btn:hover {
+      background-color: #f59e0b;
+      transform: scale(1.05);
+    }
+
+  </style>
 </html>
