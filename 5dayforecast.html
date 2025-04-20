@@ -67,7 +67,15 @@
       animation-delay: 30s;
     }
 
-   
+    @keyframes moveCloudsRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(200vw); }
+      }
+  
+      @keyframes moveCloudsLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-200vw); }
+      }
 
     .forecast-container {
       background-color: #d6f0fa;
