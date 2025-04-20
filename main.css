@@ -1,47 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #729bd6, #df76b0);
+  background-size: cover;
+  background-position: center;
+  transition: background 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .weather-container {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.datetime {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.search-box input {
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 60%;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #0369a1;
+}
+
+.weather-box {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.weather-box img {
+  width: 100px;
+  margin: 10px 0;
+}
+
+.weather-box h2 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+}
+
+.weather-box p {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 5px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.top-nav {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    z-index: 999;
   }
   
-  @keyframes fadeIn {
-    to {
+  .about-btn {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    animation: floatIn 1.5s ease forwards;
+    opacity: 0;
+  }
+  
+  .about-btn:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes floatIn {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
       opacity: 1;
     }
   }
-  
-  .weather-info p {
-    transition: transform 0.3s ease;
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   
-  .weather-info p:hover {
+  .button-group button,
+  .button-group a {
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .location-btn {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .location-btn:hover {
+    background-color: #059669;
     transform: scale(1.05);
   }
-  @media screen and (max-width: 600px) {
-    .weather-info {
-      flex-direction: column;
-      gap: 10px;
-    }
   
-    .weather-container {
-      padding: 20px;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .weather-info {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .weather-container {
-      padding: 20px;
-    }
-  }
-  .greeting {
-    font-size: 1.3rem;
-    margin-top: 0.5rem;
-    color: #ffffff;
-    text-shadow: 1px 1px 2px #000000;
-  }
   .hero-button {
     background-color: #3b82f6;
     color: white;
@@ -49,6 +195,26 @@
   
   .hero-button:hover {
     background-color: #2563eb;
+    transform: scale(1.05);
+  }
+  
+  .about-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  
+    background-color: #f59e0b;
+    color:white;
+  }
+  
+  .about-btn:hover {
+    background-color: #d97706;
     transform: scale(1.05);
   }
   .weather-vibe-btn {
@@ -69,22 +235,49 @@
     background: linear-gradient(to right, #3b82f6, #1d4ed8);
     transform: scale(1.05);
   }
-  .about-btn {
-    padding: 12px 25px;
-    font-size: 16px;
-    font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to right, #ff758c, #ff7eb3);
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  
-    background-color: #f59e0b;
-    color:white;
-  }
-  
-  .about-btn:hover {
-    background-color: #d97706;
-    transform: scale(1.05);
-  }
+  /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #4f63d6, #f7c0c2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items at the top */
+  height: 100vh;
+  color: #fff;
+  padding-top: 20px; /* Add some space at the top */
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Space between clock and content below */
+}
+
+.clock-container {
+  text-align: center;
+}
+
+.clock {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 40px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.date {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
