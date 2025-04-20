@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>5-Day Forecast - Weather Vibes</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-</head>
   <style>
     body {
       margin: 0;
@@ -68,14 +67,14 @@
     }
 
     @keyframes moveCloudsRight {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(200vw); }
-      }
-  
-      @keyframes moveCloudsLeft {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-200vw); }
-      }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(200vw); }
+    }
+
+    @keyframes moveCloudsLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-200vw); }
+    }
 
     .forecast-container {
       background-color: #d6f0fa;
@@ -153,4 +152,25 @@
     }
 
   </style>
+</head>
+
+<body>
+  <div class="cloud left"></div>
+  <div class="cloud left"></div>
+  <div class="cloud right"></div>
+  <div class="cloud right"></div>
+  
+
+  <div class="forecast-container">
+    <h1>5-Day Forecast</h1>
+    <div class="forecast-grid" id="forecastGrid">
+      <!-- Forecast cards will be inserted here -->
+    </div>
+    <!-- Back Button -->
+    <a href="main.html" class="back-btn">Back to Main</a>
+  </div>
+
+  
+</body>
+
 </html>
