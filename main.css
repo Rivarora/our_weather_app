@@ -26,3 +26,19 @@
       padding: 20px;
     }
   }
+  @media screen and (max-width: 600px) {
+    .weather-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .weather-container {
+      padding: 20px;
+    }
+  }
+  .greeting {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+  }
