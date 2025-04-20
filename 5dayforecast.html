@@ -170,7 +170,28 @@
     <a href="main.html" class="back-btn">Back to Main</a>
   </div>
 
-  
+  <script>
+    const dummyForecast = [
+      { date: 'Tue, Apr 8', icon: '☀', temp: '24°C' },
+      { date: 'Wed, Apr 9', icon: '⛅', temp: '22°C' },
+      { date: 'Thu, Apr 10', icon: '☁', temp: '20°C' },
+      { date: 'Fri, Apr 11', icon: '⛈', temp: '19°C' },
+      { date: 'Sat, Apr 12', icon: '❄', temp: '17°C' },
+    ];
+
+    const grid = document.getElementById('forecastGrid');
+
+    dummyForecast.forEach(day => {
+      const card = document.createElement('div');
+      card.className = 'forecast-card';
+      card.innerHTML = ` 
+        <div class="date">${day.date}</div>
+        <div class="icon">${day.icon}</div>
+        <div class="temp">${day.temp}</div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
 </body>
 
 </html>
