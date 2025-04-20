@@ -51,3 +51,21 @@
     background-color: #2563eb;
     transform: scale(1.05);
   }
+  .weather-vibe-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to right, #60a5fa, #3b82f6);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .weather-vibe-btn:hover {
+    background: linear-gradient(to right, #3b82f6, #1d4ed8);
+    transform: scale(1.05);
+  }
