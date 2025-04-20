@@ -13,4 +13,18 @@ if (weather.includes("cloud")) {
 } else {
   body.style.background = "linear-gradient(to right, #83a4d4, #b6fbff)";
 }
+fetch(apiUrl)
+    .then(res => {
+      if (!res.ok) throw new Error("Location not found");
+      return res.json();
+    })
+    .then(data => {
+      document.getElementById("weatherBox").classList.remove("hidden");
+      document.getElementById("location").textContent = '${data.name}, ${data.sys.country}';
+      document.getElementById("temp").textContent = '🌡 ${data.main.temp} °C';
+      document.getElementById("desc").textContent = '🔎 ${data.weather[0].description}';
+      document.getElementById("icon").src = 'https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png';
+      document.getElementById("quote").textContent = "${quotes[Math.floor(Math.random() * quotes.length)]}";
+    }
+  )
 
