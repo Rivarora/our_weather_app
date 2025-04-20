@@ -104,3 +104,14 @@
     
   </style>
 </head>
+<body>
+    <div class="container">
+      <h1>5-Day Weather Forecast</h1>
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="fetchWeatherData()">Get Forecast</button>
+      </div>
+      <canvas id="forecastChart"></canvas>
+      <!-- Back to App button -->
+      <button class="back-btn" onclick="location.href='main.html'">Back to App</button>
+    </div>
