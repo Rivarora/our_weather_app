@@ -1,4 +1,5 @@
 // Set background based on weather
+const apiKey = "893971476f90297c35a0aab354c27d75"; // Replace with your API key
 const weather = data.weather[0].main.toLowerCase();
 const body = document.body;
 if (weather.includes("cloud")) {
