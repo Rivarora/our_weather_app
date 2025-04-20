@@ -9,6 +9,27 @@
 </head>
 <body>
   <p id="greeting" class="greeting"></p>
+  <script>
+    function showGreeting() {
+      const greetingElement = document.getElementById('greeting');
+      const now = new Date();
+      const hour = now.getHours();
+      let greeting;
+  
+      if (hour < 12) {
+        greeting = "☀ Good Morning!";
+      } else if (hour < 18) {
+        greeting = "🌤 Good Afternoon!";
+      } else {
+        greeting = "🌙 Good Evening!";
+      }
+  
+      greetingElement.textContent = greeting;
+    }
+  
+    // Call function when page loads
+    window.onload = showGreeting;
+  </script>
 
   <div class="overlay">
     <div class="weather-container">
