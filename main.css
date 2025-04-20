@@ -42,3 +42,12 @@
     color: #ffffff;
     text-shadow: 1px 1px 2px #000000;
   }
+  .hero-button {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .hero-button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+  }
