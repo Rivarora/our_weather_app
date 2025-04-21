@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-
- 
   <p id="greeting" class="greeting"></p>
   <script>
     function showGreeting() {
@@ -23,7 +21,7 @@
       } else if (hour < 18) {
         greeting = "🌤 Good Afternoon!";
       } else {
-        greeting = "🌙 Good Evening!";
+        greeting = "🌙 Good Evening!"; 
       }
   
       greetingElement.textContent = greeting;
@@ -31,23 +29,19 @@
   
     // Call function when page loads
     window.onload = showGreeting;
-    
   </script>
 
   <div class="overlay">
     <div class="weather-container">
-      <h1 class="title">🌦 Weather Vibes</h1>
+      <h1 class="title">🌦️ Weather Vibes</h1>
       <p id="datetime" class="datetime"></p>
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="Enter city or PIN code">
         <button onclick="getWeather()">Search</button>
       </div>
       <div class="button-group">
-        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
         <button class="location-btn" onclick="getUserLocation()">📍 Use My Location</button>
-
         <a href="5dayforecast.html" class="hero-button">📅 5-Day Forecast</a>
-        <a href="about.html" class="about-btn">About Us</a>
         <!-- Weather Vibe Button -->
         <button class="weather-vibe-btn" onclick="location.href='chart.html'">
   🌦 Weather Vibe
@@ -76,6 +70,7 @@
       
 
     
+          
+
     
    
-

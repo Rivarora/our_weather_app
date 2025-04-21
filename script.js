@@ -25,10 +25,10 @@ function getWeather() {
     .then(data => {
       document.getElementById("weatherBox").classList.remove("hidden");
       document.getElementById("location").textContent = `${data.name}, ${data.sys.country}`;
-      document.getElementById("temp").textContent = `🌡 ${data.main.temp} °C`;
-      document.getElementById("desc").textContent =` 🔎 ${data.weather[0].description}`;
+      document.getElementById("temp").textContent = `🌡️ ${data.main.temp} °C`;
+      document.getElementById("desc").textContent = `🔎 ${data.weather[0].description}`;
       document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      document.getElementById("quote").textContent = "${quotes[Math.floor(Math.random() * quotes.length)]}";
+      document.getElementById("quote").textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
 
       // Set background based on weather
       const weather = data.weather[0].main.toLowerCase();
@@ -47,50 +47,6 @@ function getWeather() {
     })
     .catch(error => alert("Error fetching weather: " + error.message));
 }
-fetch(apiUrl)
-    .then(res => {
-      if (!res.ok) throw new Error("Location not found");
-      return res.json();
-    })
-    .then(data => {
-      document.getElementById("weatherBox").classList.remove("hidden");
-      document.getElementById("location").textContent = '${data.name}, ${data.sys.country}';
-      document.getElementById("temp").textContent = '🌡 ${data.main.temp} °C';
-      document.getElementById("desc").textContent = '🔎 ${data.weather[0].description}';
-      document.getElementById("icon").src = 'https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png';
-      document.getElementById("quote").textContent = "${quotes[Math.floor(Math.random() * quotes.length)]}";
-    }
-  )
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
-  
-    // Safety check: make sure the button exists
-    if (!toggleBtn) {
-      console.error('Theme toggle button not found!');
-      return;
-    }
-  
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.textContent = '☀️ Light Mode';
-    }
-  
-    toggleBtn.addEventListener('click', function () {
-      body.classList.toggle('dark-mode');
-  
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '☀️ Light Mode';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggleBtn.textContent = '🌙 Dark Mode';
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  });
-  
-  
 
 // Show date & time
 function updateDateTime() {
@@ -160,8 +116,8 @@ function displayWeather(data) {
 function getMotivationalQuote() {
   const quotes = [
     "Keep shining, no matter the weather!",
-    "You're as bright as the sun today ☀",
-    "Let your dreams rain success 🌧",
+    "You're as bright as the sun today ☀️",
+    "Let your dreams rain success 🌧️",
     "Every storm passes. Stay strong!",
   ];
   return quotes[Math.floor(Math.random() * quotes.length)];
@@ -200,3 +156,4 @@ setInterval(updateClock, 1000);
 
 // Initialize clock immediately
 updateClock();
+
