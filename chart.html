@@ -129,12 +129,12 @@
         return;
       }
 
-      const apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}&_=${new Date().getTime()}';
+      const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}&_=${new Date().getTime()}`;
 
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-          throw new Error('City not found: ${response.statusText}');
+          throw new Error(`City not found: ${response.statusText}`);
         }
         const data = await response.json();
         if (data && data.list && data.list.length === 0) {
@@ -228,7 +228,7 @@
                 label: function (context) {
                   const date = context.label;
                   const temp = context.raw;
-                  return 'Date: ${date}, Temp: ${temp}°C';
+                  return `Date: ${date}, Temp: ${temp}°C`;
                 },
               },
             },
