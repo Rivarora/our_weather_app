@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+
+ 
   <p id="greeting" class="greeting"></p>
   <script>
     function showGreeting() {
@@ -34,7 +36,7 @@
 
   <div class="overlay">
     <div class="weather-container">
-      <h1 class="title">🌦️ Weather Vibes</h1>
+      <h1 class="title">🌦 Weather Vibes</h1>
       <p id="datetime" class="datetime"></p>
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="Enter city or PIN code">
@@ -43,9 +45,34 @@
       <div class="button-group">
         <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
         <button class="location-btn" onclick="getUserLocation()">📍 Use My Location</button>
+
         <a href="5dayforecast.html" class="hero-button">📅 5-Day Forecast</a>
+        <a href="about.html" class="about-btn">About Us</a>
         <!-- Weather Vibe Button -->
         <button class="weather-vibe-btn" onclick="location.href='chart.html'">
+  🌦 Weather Vibe
+  
+</button>
+      </div>
+      <div class="weather-box hidden" id="weatherBox">
+        <h2 id="location"></h2>
+        <img id="icon" src="" alt="Weather Icon">
+        <p id="temp"></p>
+        <p id="desc"></p>
+        <p id="quote"></p>
+        <p id="clouds"></p>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+
+</html> 
+
+</html>
           🌦 Weather Chart
           
         </button>
@@ -58,3 +85,4 @@
     </html> 
     
    
+
