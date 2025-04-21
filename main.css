@@ -281,3 +281,23 @@ header {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 }
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #333;
+  color: white;
+}

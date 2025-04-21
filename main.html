@@ -8,7 +8,31 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+
  
+  <p id="greeting" class="greeting"></p>
+  <script>
+    function showGreeting() {
+      const greetingElement = document.getElementById('greeting');
+      const now = new Date();
+      const hour = now.getHours();
+      let greeting;
+  
+      if (hour < 12) {
+        greeting = "☀ Good Morning!";
+      } else if (hour < 18) {
+        greeting = "🌤 Good Afternoon!";
+      } else {
+        greeting = "🌙 Good Evening!";
+      }
+  
+      greetingElement.textContent = greeting;
+    }
+  
+    // Call function when page loads
+    window.onload = showGreeting;
+    
+  </script>
 
   <div class="overlay">
     <div class="weather-container">
@@ -19,6 +43,7 @@
         <button onclick="getWeather()">Search</button>
       </div>
       <div class="button-group">
+        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
         <button class="location-btn" onclick="getUserLocation()">📍 Use My Location</button>
 
         <a href="5dayforecast.html" class="hero-button">📅 5-Day Forecast</a>
@@ -48,3 +73,16 @@
 </html> 
 
 </html>
+          🌦 Weather Chart
+          
+        </button>
+        <a href="about.html" class="about-btn">About Us</a>
+        <script src="script.js"></script>
+    </body>
+
+      
+
+    </html> 
+    
+   
+
