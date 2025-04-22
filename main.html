@@ -48,19 +48,25 @@
           
         </button>
         <a href="about.html" class="about-btn">About Us</a>
-        <script src="script.js"></script>
-        <div id="weatherBox" class="hidden">
+        <div class="weather-box hidden" id="weatherBox">
           <h2 id="location"></h2>
+          <img id="icon" src="" alt="Weather Icon">
           <p id="temp"></p>
           <p id="desc"></p>
-          <img id="icon" alt="Weather icon">
           <p id="quote"></p>
+          <p id="clouds"></p>
+        
+          <!-- Temperature toggle button -->
+          <button id="toggleTemp" onclick="toggleTemperature()">Switch to °F</button>
         </div>
+
         <script>
           window.onload = function() {
             // your code here
           };
         </script>
+        <script src="script.js"></script>
+        <script></script>
                 
     </body>
   
