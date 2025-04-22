@@ -1,4 +1,4 @@
-const apiKey = "893971476f90297c35a0aab354c27d75"; // Replace with your API key
+const apiKey = '50a302ec07f5e90f5d54a02dcd0c714a'; // Replace with your API key
 
 const quotes = [
   "Chase the sunshine, even on cloudy days.",
@@ -25,10 +25,10 @@ function getWeather() {
     .then(data => {
       document.getElementById("weatherBox").classList.remove("hidden");
       document.getElementById("location").textContent = `${data.name}, ${data.sys.country}`;
-      document.getElementById("temp").textContent = `🌡️ ${data.main.temp} °C`;
+      document.getElementById("temp").textContent = `🌡 ${data.main.temp} °C`;
       document.getElementById("desc").textContent = `🔎 ${data.weather[0].description}`;
       document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      document.getElementById("quote").textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+      document.getElementById("quote").textContent = "${quotes[Math.floor(Math.random() * quotes.length)]}";
 
       // Set background based on weather
       const weather = data.weather[0].main.toLowerCase();
@@ -116,8 +116,8 @@ function displayWeather(data) {
 function getMotivationalQuote() {
   const quotes = [
     "Keep shining, no matter the weather!",
-    "You're as bright as the sun today ☀️",
-    "Let your dreams rain success 🌧️",
+    "You're as bright as the sun today ☀",
+    "Let your dreams rain success 🌧",
     "Every storm passes. Stay strong!",
   ];
   return quotes[Math.floor(Math.random() * quotes.length)];
@@ -157,3 +157,6 @@ setInterval(updateClock, 1000);
 // Initialize clock immediately
 updateClock();
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Your weather function or event bindings here
+});
