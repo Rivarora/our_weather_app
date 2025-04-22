@@ -1,4 +1,6 @@
 const apiKey = '50a302ec07f5e90f5d54a02dcd0c714a'; // Replace with your API key
+let currentTempCelsius = null;
+let currentUnit = 'C'; // Track current temperature unit
 
 const quotes = [
   "Chase the sunshine, even on cloudy days.",
@@ -16,23 +18,24 @@ function getWeather() {
   const apiUrl = isPin
     ? `https://api.openweathermap.org/data/2.5/weather?zip=${input},IN&appid=${apiKey}&units=metric`
     : `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${apiKey}&units=metric`;
-
+  
   fetch(apiUrl)
     .then(res => {
       if (!res.ok) throw new Error("Location not found");
       return res.json();
     })
     .then(data => {
+      currentTempCelsius = data.main.temp;
+      currentUnit = 'C';
+
       document.getElementById("weatherBox").classList.remove("hidden");
       document.getElementById("location").textContent = `${data.name}, ${data.sys.country}`;
-      document.getElementById("temp").textContent = `🌡 ${data.main.temp} °C`;
+      document.getElementById("temp").textContent = `🌡 ${currentTempCelsius.toFixed(1)} °C`;
       document.getElementById("desc").textContent = `🔎 ${data.weather[0].description}`;
       document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-
-      // ✅ Corrected quote logic
       document.getElementById("quote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
-      // Set background based on weather
+      // Background based on weather
       const weather = data.weather[0].main.toLowerCase();
       const body = document.body;
       if (weather.includes("cloud")) {
@@ -94,12 +97,14 @@ function showError(error) {
 }
 
 function getWeatherByCoords(lat, lon) {
-  const apiKey = "34cbac9a046105efb7e62a6405ea0d71"; // Replace with your OpenWeatherMap API key
+  const apiKey = "34cbac9a046105efb7e62a6405ea0d71";
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      currentTempCelsius = data.main.temp;
+      currentUnit = 'C';
       displayWeather(data);
     })
     .catch(error => {
@@ -110,7 +115,7 @@ function getWeatherByCoords(lat, lon) {
 function displayWeather(data) {
   document.getElementById("weatherBox").classList.remove("hidden");
   document.getElementById("location").innerText = data.name;
-  document.getElementById("temp").innerText = `${data.main.temp}°C`;
+  document.getElementById("temp").innerText = `🌡 ${data.main.temp.toFixed(1)} °C`;
   document.getElementById("desc").innerText = data.weather[0].description;
   document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   document.getElementById("quote").innerText = getMotivationalQuote();
@@ -128,7 +133,6 @@ function getMotivationalQuote() {
 
 function updateClock() {
   const now = new Date();
-
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
@@ -136,7 +140,6 @@ function updateClock() {
   const ampm = hours >= 12 ? 'PM' : 'AM';
   hours = hours % 12;
   hours = hours ? hours : 12;
-
   minutes = minutes < 10 ? '0' + minutes : minutes;
   seconds = seconds < 10 ? '0' + seconds : seconds;
 
@@ -147,10 +150,26 @@ function updateClock() {
   const dateString = now.toLocaleDateString('en-US', options);
   document.getElementById('date').textContent = dateString;
 }
-
 setInterval(updateClock, 1000);
 updateClock();
+// Toggle temperature between Celsius and Fahrenheit
+function toggleTemperature() {
+  if (currentTempCelsius === null) return;
 
-document.addEventListener("DOMContentLoaded", function () {
-  // You can place additional init code here if needed
-});
+  const tempElement = document.getElementById("temp");
+  const toggleBtn = document.getElementById("toggleTemp");
+
+  if (currentUnit === 'C') {
+    const tempF = (currentTempCelsius * 9) / 5 + 32;
+    tempElement.textContent = `🌡 ${tempF.toFixed(1)} °F`;
+    toggleBtn.textContent = "Switch to °C";
+    currentUnit = 'F';
+  } else {
+    tempElement.textContent = `🌡 ${currentTempCelsius.toFixed(1)} °C`;
+    toggleBtn.textContent = "Switch to °F";
+    currentUnit = 'C';
+  }
+}
+
+
+
