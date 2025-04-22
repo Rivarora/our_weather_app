@@ -28,7 +28,9 @@ function getWeather() {
       document.getElementById("temp").textContent = `🌡 ${data.main.temp} °C`;
       document.getElementById("desc").textContent = `🔎 ${data.weather[0].description}`;
       document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      document.getElementById("quote").textContent = "${quotes[Math.floor(Math.random() * quotes.length)]}";
+
+      // ✅ Corrected quote logic
+      document.getElementById("quote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
       // Set background based on weather
       const weather = data.weather[0].main.toLowerCase();
@@ -59,6 +61,7 @@ function updateDateTime() {
 }
 setInterval(updateDateTime, 1000);
 updateDateTime();
+
 function getUserLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -110,7 +113,7 @@ function displayWeather(data) {
   document.getElementById("temp").innerText = `${data.main.temp}°C`;
   document.getElementById("desc").innerText = data.weather[0].description;
   document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-  document.getElementById("quote").innerText = getMotivationalQuote(); // Optional
+  document.getElementById("quote").innerText = getMotivationalQuote();
 }
 
 function getMotivationalQuote() {
@@ -122,41 +125,32 @@ function getMotivationalQuote() {
   ];
   return quotes[Math.floor(Math.random() * quotes.length)];
 }
+
 function updateClock() {
   const now = new Date();
-  
+
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
-  
-  // AM/PM format
+
   const ampm = hours >= 12 ? 'PM' : 'AM';
-  
-  // Convert 24-hour format to 12-hour format
   hours = hours % 12;
-  hours = hours ? hours : 12; // The hour '0' should be '12'
-  
-  // Pad minutes and seconds with leading zeros
+  hours = hours ? hours : 12;
+
   minutes = minutes < 10 ? '0' + minutes : minutes;
   seconds = seconds < 10 ? '0' + seconds : seconds;
 
   const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
-  
-  // Display time
   document.getElementById('clock').textContent = timeString;
 
-  // Display the date in format: Day, Month Date, Year
   const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
   const dateString = now.toLocaleDateString('en-US', options);
   document.getElementById('date').textContent = dateString;
 }
 
-// Update the clock every second
 setInterval(updateClock, 1000);
-
-// Initialize clock immediately
 updateClock();
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Your weather function or event bindings here
+  // You can place additional init code here if needed
 });
