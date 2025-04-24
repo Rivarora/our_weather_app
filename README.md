@@ -17,7 +17,6 @@
     <li>📍 <b>Auto Location Detection:</b> Uses Geolocation API to detect the user's location.</li>
     <li>🌆 <b>Dynamic Backgrounds:</b> Changes background based on weather conditions.</li>
     <li>📊 <b>Interactive Charts:</b> Visualizes weather data using Chart.js.</li>
-    <li>📱 <b>PWA (Progressive Web App):</b> Allows offline access and installability.</li>
     <li>⏰ <b>Real-time Date & Time Display</b></li>
   </ul>
 
