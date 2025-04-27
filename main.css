@@ -143,13 +143,13 @@ body {
   
   .about-btn:hover {
     transform: scale(1.08);
-    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    background: linear-gradient(135deg, #e8697e, #ea70a3);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   }
   
   @keyframes floatIn {
     0% {
-      transform: translateY(-20px);
+      transform: translateY(0px);
       opacity: 0;
     }
     100% {
@@ -207,7 +207,7 @@ body {
     border: none;
     border-radius: 30px;
     text-decoration: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(168, 24, 60, 0.2);
   
     background-color: #f59e0b;
     color:white;
@@ -221,18 +221,18 @@ body {
     padding: 12px 25px;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to right, #60a5fa, #3b82f6);
+    background: linear-gradient(to right, #aa1f5b, #c5156d);
     color: #fff;
     border: none;
     border-radius: 30px;
     text-decoration: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(198, 14, 112, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
   }
   
   .weather-vibe-btn:hover {
-    background: linear-gradient(to right, #3b82f6, #1d4ed8);
+    background: linear-gradient(to right, #d22383, #d81d77);
     transform: scale(1.05);
   }
   /* Basic Reset */
@@ -316,6 +316,9 @@ body.dark-mode .theme-toggle {
 }
 
 #toggleTemp:hover {
+  background-color: #9eb600;
+  transform: scale(1.05);
+
   background-color: #0077b6;
   
 }
@@ -376,7 +379,40 @@ body.dark .theme-toggle {
 body.dark .credits {
   color: #7021d8;
 }
+
 /* Styling for the Moon Phases button */
+/* Feels Like Button Styling */
+.feels-like-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #fabf60, #f6b53b); /* Gradient from light blue to dark blue */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px; /* Spacing above the button */
+}
+
+.feels-like-button:hover {
+  background: linear-gradient(135deg, #f6b83b, #d8b91d); /* Change gradient on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.feels-like-button:active {
+  background: linear-gradient(135deg, #d8af1d, #f6e63b); /* Change gradient on click */
+  transform: scale(0.95); /* Shrink the button slightly when clicked */
+}
+
+/* Styling for the temperature value inside the button */
+#feels-like {
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 10px;} /* Small space between label and value */
+  /* Styling for the Moon Phases button */
 .moon-phase-btn {
   background-color: #b51ed3; /* Green background color */
   color: white; /* White text */
@@ -405,6 +441,7 @@ body.dark .credits {
 
 /* Focus effect (when the button is focused) */
 .moon-phase-btn:focus {
-  outline: none; /* Remove default focus outline */
+  outline: none; /* Remove default focus outline *
   box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
+  box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
 }

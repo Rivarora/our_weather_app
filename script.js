@@ -26,6 +26,7 @@ function getWeather() {
     })
     .then(data => {
       currentTempCelsius = data.main.temp;
+      const feelsLike = data.main.feels_like;  // Fetch feels_like data here
       currentUnit = 'C';
 
       document.getElementById("weatherBox").classList.remove("hidden");
@@ -34,6 +35,9 @@ function getWeather() {
       document.getElementById("desc").textContent = `🔎 ${data.weather[0].description}`;
       document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       document.getElementById("quote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+// Update feels-like temperature here
+    document.getElementById('feels-like').textContent = `${feelsLike.toFixed(1)}°C`;
 
       // Background based on weather
       const weather = data.weather[0].main.toLowerCase();
@@ -152,6 +156,7 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
 // Toggle temperature between Celsius and Fahrenheit
 function toggleTemperature() {
   if (currentTempCelsius === null) return;
@@ -170,6 +175,8 @@ function toggleTemperature() {
     currentUnit = 'C';
   }
 }
+
+
 
 
 
