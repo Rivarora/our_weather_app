@@ -379,6 +379,8 @@ body.dark .theme-toggle {
 body.dark .credits {
   color: #7021d8;
 }
+
+/* Styling for the Moon Phases button */
 /* Feels Like Button Styling */
 .feels-like-button {
   padding: 12px 25px;
@@ -439,6 +441,7 @@ body.dark .credits {
 
 /* Focus effect (when the button is focused) */
 .moon-phase-btn:focus {
-  outline: none; /* Remove default focus outline */
+  outline: none; /* Remove default focus outline *
+  box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
   box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
 }
