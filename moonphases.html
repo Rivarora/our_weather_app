@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon Phases</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="moonphases.css" />
+</head>
+<body>
+  <h1>🌑 Current Moon Phase</h1>
+
+  <div id="current-phase">
+    <p>The current moon phase is: <span id="moon-phase"></span></p>
+    <div id="moon-phase-icons">
+      <span class="moon-phase">🌑 New Moon</span>
+      <span class="moon-phase">🌓 First Quarter</span>
+      <span class="moon-phase">🌔 Waxing Gibbous</span>
+      <span class="moon-phase">🌕 Full Moon</span>
+      <span class="moon-phase">🌖 Waning Gibbous</span>
+      <span class="moon-phase">🌗 Last Quarter</span>
+      <span class="moon-phase">🌘 Waning Crescent</span>
+    </div>
+  </div>
+
+  <!-- 3D Animated Moon Section -->
+  <div id="moon-container">
+    <div id="moon">
+      <div id="moon-shadow"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
