@@ -143,13 +143,13 @@ body {
   
   .about-btn:hover {
     transform: scale(1.08);
-    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    background: linear-gradient(135deg, #e8697e, #ea70a3);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   }
   
   @keyframes floatIn {
     0% {
-      transform: translateY(-20px);
+      transform: translateY(0px);
       opacity: 0;
     }
     100% {
@@ -207,7 +207,7 @@ body {
     border: none;
     border-radius: 30px;
     text-decoration: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(168, 24, 60, 0.2);
   
     background-color: #f59e0b;
     color:white;
@@ -221,18 +221,18 @@ body {
     padding: 12px 25px;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to right, #60a5fa, #3b82f6);
+    background: linear-gradient(to right, #aa1f5b, #c5156d);
     color: #fff;
     border: none;
     border-radius: 30px;
     text-decoration: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(198, 14, 112, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
   }
   
   .weather-vibe-btn:hover {
-    background: linear-gradient(to right, #3b82f6, #1d4ed8);
+    background: linear-gradient(to right, #d22383, #d81d77);
     transform: scale(1.05);
   }
   /* Basic Reset */
@@ -316,6 +316,8 @@ body.dark-mode .theme-toggle {
 }
 
 #toggleTemp:hover {
-  background-color: #0077b6;
+  background-color: #9eb600;
   transform: scale(1.05);
 }
+
+
