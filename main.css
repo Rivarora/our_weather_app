@@ -318,7 +318,7 @@ body.dark-mode .theme-toggle {
 #toggleTemp:hover {
   background-color: #9eb600;
   transform: scale(1.05);
-}
+
   background-color: #0077b6;
   
 }
@@ -379,3 +379,34 @@ body.dark .theme-toggle {
 body.dark .credits {
   color: #7021d8;
 }
+/* Feels Like Button Styling */
+.feels-like-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #fabf60, #f6b53b); /* Gradient from light blue to dark blue */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px; /* Spacing above the button */
+}
+
+.feels-like-button:hover {
+  background: linear-gradient(135deg, #f6b83b, #d8b91d); /* Change gradient on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.feels-like-button:active {
+  background: linear-gradient(135deg, #d8af1d, #f6e63b); /* Change gradient on click */
+  transform: scale(0.95); /* Shrink the button slightly when clicked */
+}
+
+/* Styling for the temperature value inside the button */
+#feels-like {
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 10px;} /* Small space between label and value */
