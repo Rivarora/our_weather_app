@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+  <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
   <p id="greeting" class="greeting"></p>
   <script>
     function showGreeting() {
@@ -68,7 +69,36 @@
           };
         </script>
         <script src="script.js"></script>
-        <script></script>
+        <script>// Theme toggle logic
+          const toggleBtn = document.getElementById('theme-toggle');
+          const body = document.body;
+          
+          // Check saved theme on load
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme) {
+            body.classList.add(savedTheme);
+            updateToggleText(savedTheme);
+          } else {
+            body.classList.add('light'); // default to light theme
+          }
+          
+          // Toggle button click
+          toggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('light')) {
+              body.classList.replace('light', 'dark');
+              localStorage.setItem('theme', 'dark');
+              updateToggleText('dark');
+            } else {
+              body.classList.replace('dark', 'light');
+              localStorage.setItem('theme', 'light');
+              updateToggleText('light');
+            }
+          });
+          
+          // Update button text/icon
+          function updateToggleText(theme) {
+            toggleBtn.textContent = theme === 'dark' ? '🌞 Light Mode' : '🌙 Dark Mode';
+          }</script>
                 
     </body>
   
