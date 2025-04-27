@@ -36,7 +36,8 @@ function getWeather() {
       document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       document.getElementById("quote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
-
+// Update feels-like temperature here
+    document.getElementById('feels-like').textContent = `${feelsLike.toFixed(1)}°C`;
 
       // Background based on weather
       const weather = data.weather[0].main.toLowerCase();
