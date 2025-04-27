@@ -175,7 +175,48 @@ function toggleTemperature() {
     currentUnit = 'C';
   }
 }
+//js for voice feature
+//voice
 
+  // Function to speak the weather information with a selected voice
+  function speakWeather() {
+    // Check if speech is already in progress and cancel it
+    if (speechSynthesis.speaking) {
+      speechSynthesis.cancel();
+    }
+
+    // Get weather information
+    const weatherCondition = document.getElementById('desc').textContent;
+    const temperature = document.getElementById('temp').textContent;
+    const weatherText = `Today's weather is ${weatherCondition} with a temperature of ${temperature}.`;
+
+    // Create a new SpeechSynthesisUtterance instance
+    const utterance = new SpeechSynthesisUtterance(weatherText);
+
+    // Get all available voices
+    const voices = speechSynthesis.getVoices();
+
+    // Select the voice you want (e.g., 'Google UK English Female')
+    const selectedVoice = voices.find(voice => voice.name === 'Google UK English Female'); // Change this to any available voice
+
+    // If a voice was found, use it
+    if (selectedVoice) {
+      utterance.voice = selectedVoice;
+    }
+
+    // Adjust the voice rate and pitch
+    utterance.rate = 1;  // Normal speed
+    utterance.pitch = 1; // Normal pitch
+
+    // Speak the weather info
+    speechSynthesis.speak(utterance);
+  }
+
+  // Wait until voices are loaded before calling the speakWeather function
+  window.speechSynthesis.onvoiceschanged = function () {
+    // Ensure that voices are loaded
+    console.log("Voices loaded");
+  };
 
 
 
