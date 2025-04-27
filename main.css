@@ -445,3 +445,28 @@ body.dark .credits {
   box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
   box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
 }
+#speakWeather {
+  background: linear-gradient(135deg, #f21ecb, #f240d1); /* soft blue gradient */
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 15px rgba(226, 42, 183, 0.1);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+#speakWeather:hover {
+  background: linear-gradient(135deg, #e92fca, #e339cd); /* reverse gradient on hover */
+  box-shadow: 0 12px 20px rgba(228, 26, 202, 0.2);
+  transform: scale(1.05);
+}
+
+#speakWeather:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 10px rgba(95, 221, 10, 0.2);
+}
