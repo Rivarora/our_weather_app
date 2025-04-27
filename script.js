@@ -250,7 +250,20 @@ window.onload = function() {
     // Ensure that voices are loaded
     console.log("Voices loaded");
   };
-
+  function displayAQI() {
+    const aqiValue = 85; // Example AQI value (you can replace with real data!)
+    let aqiStatus = "";
+  
+    if (aqiValue <= 50) {
+      aqiStatus = "Good 🌿";
+    } else if (aqiValue <= 100) {
+      aqiStatus = "Moderate 🌤";
+    } else {
+      aqiStatus = "Unhealthy 🚫";
+    }
+  
+    alert(`Air Quality Index: ${aqiValue}\nPollution Level: ${aqiStatus}`);
+  }
 
 
 
