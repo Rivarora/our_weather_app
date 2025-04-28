@@ -40,12 +40,12 @@ body {
 
 .title {
   font-size: 2.5rem;
-  color: #1e3a8a;
+  color: #dd2974;
   margin-bottom: 10px;
 }
 
 .datetime {
-  color: #333;
+  color: #f9fcfc;
   font-size: 1rem;
   margin-bottom: 20px;
 }
@@ -379,11 +379,9 @@ body.dark .theme-toggle {
 body.dark .credits {
   color: #7021d8;
 }
-
-/* Styling for the Moon Phases button */
-/* Feels Like Button Styling */
+/* Styling for the Feels Like button */
 .feels-like-button {
-  padding: 12px 25px;
+  padding: 12px 20px;
   font-size: 16px;
   font-family: 'Quicksand', sans-serif;
   background: linear-gradient(135deg, #fabf60, #f6b53b); /* Gradient from light blue to dark blue */
@@ -394,7 +392,6 @@ body.dark .credits {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 20px; /* Spacing above the button */
 }
 
 .feels-like-button:hover {
@@ -411,19 +408,20 @@ body.dark .credits {
 #feels-like {
   font-size: 14px;
   font-weight: normal;
-  margin-left: 10px;} /* Small space between label and value */
-  /* Styling for the Moon Phases button */
+  margin-left: 10px; /* Small space between label and value */
+}
+
+/* Styling for the Moon Phases button */
 .moon-phase-btn {
   background-color: #b51ed3; /* Green background color */
   color: white; /* White text */
   font-size: 18px; /* Font size */
-  padding: 15px 30px; /* Padding for button size */
+  padding: 10px 20px; /* Padding for button size */
   border: none; /* Remove default border */
   border-radius: 10px; /* Rounded corners */
   cursor: pointer; /* Pointer on hover */
   transition: all 0.3s ease-in-out; /* Smooth transition for effects */
   box-shadow: 0 4px 8px rgba(199, 15, 181, 0.3); /* Soft shadow for the button */
-  margin: 20px; /* Margin around the button */
 }
 
 /* Hover effect */
@@ -441,7 +439,58 @@ body.dark .credits {
 
 /* Focus effect (when the button is focused) */
 .moon-phase-btn:focus {
-  outline: none; /* Remove default focus outline *
-  box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
+  outline: none; /* Remove default focus outline */
   box-shadow: 0 0 0 4px rgba(185, 12, 204, 0.6); /* Focus ring with green color */
+}
+
+#speakWeather {
+  background: linear-gradient(135deg, #f21ecb, #f240d1); /* soft blue gradient */
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 15px rgba(226, 42, 183, 0.1);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+#speakWeather:hover {
+  background: linear-gradient(135deg, #e92fca, #e339cd); /* reverse gradient on hover */
+  box-shadow: 0 12px 20px rgba(228, 26, 202, 0.2);
+  transform: scale(1.05);
+}
+
+#speakWeather:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 10px rgba(95, 221, 10, 0.2);
+}
+#showAQI {
+  background: linear-gradient(135deg, #56ab2f, #a8e063); /* greenish gradient */
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  outline: none;
+}
+
+#showAQI:hover {
+  background: linear-gradient(135deg, #a8e063, #56ab2f); /* reverse gradient on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+#showAQI:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }

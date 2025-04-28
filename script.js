@@ -209,6 +209,93 @@ window.onload = function() {
 };
 
 
+// Function to calculate the current moon phase
+function getMoonPhase() {
+  const currentDate = new Date();
+  const startDate = new Date(2001, 0, 1); // Known New Moon date (January 1, 2001)
+  const days = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24)); // Calculate number of days since New Moon
+  const phase = (days % 29.53058867) / 29.53058867; // Calculate the phase of the moon
+
+  let phaseName = '';
+
+  if (phase < 0.03) {
+    phaseName = '🌑 New Moon';
+  } else if (phase < 0.25) {
+    phaseName = '🌓 First Quarter';
+  } else if (phase < 0.5) {
+    phaseName = '🌔 Waxing Gibbous';
+  } else if (phase < 0.75) {
+    phaseName = '🌕 Full Moon';
+  } else if (phase < 0.98) {
+    phaseName = '🌖 Waning Gibbous';
+  } else if (phase < 1) {
+    phaseName = '🌗 Last Quarter';
+  } else {
+    phaseName = '🌘 Waning Crescent';
+  }
+
+  document.getElementById('moon-phase').textContent = phaseName;
+}
+
+// Call the function to display the moon phase on page load
+window.onload = function() {
+  getMoonPhase();
+};
+
+
+  // Function to speak the weather information with a selected voice
+  function speakWeather() {
+    // Check if speech is already in progress and cancel it
+    if (speechSynthesis.speaking) {
+      speechSynthesis.cancel();
+    }
+
+    // Get weather information
+    const weatherCondition = document.getElementById('desc').textContent;
+    const temperature = document.getElementById('temp').textContent;
+    const weatherText = `Today's weather is ${weatherCondition} with a temperature of ${temperature}.`;
+
+    // Create a new SpeechSynthesisUtterance instance
+    const utterance = new SpeechSynthesisUtterance(weatherText);
+
+    // Get all available voices
+    const voices = speechSynthesis.getVoices();
+
+    // Select the voice you want (e.g., 'Google UK English Female')
+    const selectedVoice = voices.find(voice => voice.name === 'Google UK English Female'); // Change this to any available voice
+
+    // If a voice was found, use it
+    if (selectedVoice) {
+      utterance.voice = selectedVoice;
+    }
+
+    // Adjust the voice rate and pitch
+    utterance.rate = 1;  // Normal speed
+    utterance.pitch = 1; // Normal pitch
+
+    // Speak the weather info
+    speechSynthesis.speak(utterance);
+  }
+
+  // Wait until voices are loaded before calling the speakWeather function
+  window.speechSynthesis.onvoiceschanged = function () {
+    // Ensure that voices are loaded
+    console.log("Voices loaded");
+  };
+  function displayAQI() {
+    const aqiValue = 85; // Example AQI value (you can replace with real data!)
+    let aqiStatus = "";
+  
+    if (aqiValue <= 50) {
+      aqiStatus = "Good 🌿";
+    } else if (aqiValue <= 100) {
+      aqiStatus = "Moderate 🌤";
+    } else {
+      aqiStatus = "Unhealthy 🚫";
+    }
+  
+    alert(`Air Quality Index: ${aqiValue}\nPollution Level: ${aqiStatus}`);
+  }
 
 
 
