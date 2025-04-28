@@ -175,6 +175,38 @@ function toggleTemperature() {
     currentUnit = 'C';
   }
 }
+// Function to calculate the current moon phase
+function getMoonPhase() {
+  const currentDate = new Date();
+  const startDate = new Date(2001, 0, 1); // Known New Moon date (January 1, 2001)
+  const days = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24)); // Calculate number of days since New Moon
+  const phase = (days % 29.53058867) / 29.53058867; // Calculate the phase of the moon
+
+  let phaseName = '';
+
+  if (phase < 0.03) {
+    phaseName = '🌑 New Moon';
+  } else if (phase < 0.25) {
+    phaseName = '🌓 First Quarter';
+  } else if (phase < 0.5) {
+    phaseName = '🌔 Waxing Gibbous';
+  } else if (phase < 0.75) {
+    phaseName = '🌕 Full Moon';
+  } else if (phase < 0.98) {
+    phaseName = '🌖 Waning Gibbous';
+  } else if (phase < 1) {
+    phaseName = '🌗 Last Quarter';
+  } else {
+    phaseName = '🌘 Waning Crescent';
+  }
+
+  document.getElementById('moon-phase').textContent = phaseName;
+}
+
+// Call the function to display the moon phase on page load
+window.onload = function() {
+  getMoonPhase();
+};
 
 
 // Function to calculate the current moon phase
